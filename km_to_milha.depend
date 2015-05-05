@@ -1,9 +1,6 @@
 # depslib dependency file v1.0
-1430785807 source:d:\github\ed2-1643\main.cpp
-	<iostream>
+1430787596 source:d:\github\ed2-1643\main.cpp
 	<stdio.h>
 	<stdlib.h>
-	<string.h>
-	<time.h>
 	<math.h>
 

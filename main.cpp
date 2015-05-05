@@ -3,14 +3,14 @@
 /// Stefany Aoto Rojas Ruiz
 /// Yasmin Pegoraro
 
-#include <iostream>
+//#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <time.h>
+//#include <string.h>
+//#include <time.h>
 #include <math.h>
 
-using namespace std;
+//using namespace std;
 
 int d=0;            /// 0 saidas de debug. 1 saida padrao
 
@@ -24,10 +24,10 @@ int fib[25000];     //a sequencia de fibonacci
 int maior=0;        //maior km lido
 
 //funcoes
-void lerdist();     //ler distancias
+void lerdist();         //ler distancias
 void calculaFibs();
 void shiftEsq();
-void calculaMilha();
+void calculaMilha();    // transforma milhas do formato fibonacci para a quantidade certa
 void print();
 int intlen(int x);
 
@@ -44,6 +44,7 @@ int main()
     lerdist();
     calculaFibs();
     shiftEsq();
+    calculaMilha();
     print();
 
     return 0;
@@ -106,14 +107,15 @@ void shiftEsq()
     }
 }
 
-void calculaMilha()
+void calculaMilha()         // transforma milhas do formato fibonacci para a quantidade certa
 {
-    int i, j, tam;
+    d? :printf("calculando milha\n");
+    int i, tam;
     for(i=0; i<n; i++) {
-        tam = intlen(mlF[i]) - 1;
-        for(j=0; j<tam; j++){
-            if( mlF[i] % (int)ceil(pow(10,tam)) == 1){
-                ml[i] += fib[tam];
+        tam = intlen(mlF[i]);
+        while(tam > 0) {
+            if( mlF[i] / (int)ceil(pow(10,tam-1)) == 1) {
+                ml[i] += fib[tam-1];
             }
             tam--;
         }
@@ -128,9 +130,10 @@ int intlen(int x)       // retorna quantos digitos o numero tem;
     return length;
 }
 
-void print(){
+void print()
+{
     int i;
-    for(i=0; i<n; i++){
+    for(i=0; i<n; i++) {
         printf("%d\n", ml[i]);
     }
 }
