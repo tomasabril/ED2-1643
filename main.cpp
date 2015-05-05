@@ -29,6 +29,7 @@ void calculaFibs();
 void shiftEsq();
 void calculaMilha();
 void print();
+int intlen(int x);
 
 int main()
 {
@@ -42,6 +43,8 @@ int main()
     }
     lerdist();
     calculaFibs();
+    shiftEsq();
+    print();
 
     return 0;
 }
@@ -93,5 +96,43 @@ void calculaFibs()
 
 }
 
+void shiftEsq()
+{
+    d? :printf("shift esquerda\n");
+    int i;
+    for(i=0; i<n; i++) {
+        mlF[i] = kmF[i] /10;
+        d? :printf(" kmF: %d  mlF: %d \n", kmF[i], mlF[i]);
+    }
+}
+
+void calculaMilha()
+{
+    int i, j, tam;
+    for(i=0; i<n; i++) {
+        tam = intlen(mlF[i]) - 1;
+        for(j=0; j<tam; j++){
+            if( mlF[i] % (int)ceil(pow(10,tam)) == 1){
+                ml[i] += fib[tam];
+            }
+            tam--;
+        }
+    }
+}
+
+int intlen(int x)       // retorna quantos digitos o numero tem;
+{
+    int length = 1;
+    while ( x /= 10 )
+        length++;
+    return length;
+}
+
+void print(){
+    int i;
+    for(i=0; i<n; i++){
+        printf("%d\n", ml[i]);
+    }
+}
 
 
